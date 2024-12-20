@@ -27,18 +27,17 @@ int exercise_list_size = 0;
 */
 
 void loadExercises(const char* EXERCISEFILEPATH) {
-    FILE *file = fopen(EXERCISEFILEPATH, "r"); // reading mode
+    FILE *file = fopen(EXERCISEFILEPATH, "r");
     if (file == NULL) {
         printf("There is no file for exercises! \n");
         return;
     }
 
     // ToCode: to read a list of the exercises from the given file
-    while (fscanf(file,"%s %d",exercise_list[exercise_list_size].exercise_name, &exercise_list[exercise_list_size].calories_burned_per_minute)==2) {
-    	exercise_list_size++; // Read line by line from the file and save it in the exercise_list array
-    	// If you have successfully read two values from a file, increase the exercise_list_size
+    while ( ) {
+    	
         if (exercise_list_size >= MAX_EXERCISES){
-        	break; // Exit the while loop.
+        	break;
 		}
     }
 
@@ -61,16 +60,10 @@ void inputExercise(HealthData* health_data) {
     
     // ToCode: to provide the options for the exercises to be selected
     printf("The list of exercises: \n");
-    for(i=0;i<exercise_list_size;i++){
-    	printf("%d. %s (%d kcal/min)\n",i+1, exercise_list[i].exercise_name, exercise_list[i].calories_burned_per_minute);
-	}
 
 
     // ToCode: to enter the exercise to be chosen with exit option
-	printf("Select exercise: ");
-	scanf("%d",&choice);
-	if(choice==0)
-		return;
+
  
     
     // To enter the duration of the exercise
